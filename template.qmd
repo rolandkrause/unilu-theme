@@ -13,7 +13,7 @@ from: markdown+emoji
 title-slide-attributes: 
   data-background-image: https://tidyverse.tidyverse.org/logo.png
   data-background-position: "50% 10%"
-  data-background-size: "150px"
+  data-background-size: "100px"
 execute: 
   echo: true
 ---
@@ -50,9 +50,9 @@ Set it in the YAML header with `logo_url: "https://fasterthanli.me"`
 
 If not set, it points to https://quarto.org
 
-## Practical {background="#e4f0ff"}
+## Practical {.slide-practical}
 
-Using `{background="#e4f0ff"}` class to the header2
+Using `{.slide-practical}` class to the header2
 
 Absolute positioning of image and text, increment with `. . .`
 
@@ -161,7 +161,7 @@ Source: [`{targets}` user manual](https://books.ropensci.org/targets/literate-pr
 :::
 
 
-## Layout for chunks too
+## Layout for chunks
 
 - Highlight code lines, incremental with `|`
 - Execute code _inside_ a caption with `!expr`
@@ -177,8 +177,200 @@ plot(swiss$Agriculture, swiss$Education)
 ```
 
 
+## Standard two column layout
+
+:::: {.columns}
+::: {.column width="50%"}
+### Data
+```{r}
+options(width=60)
+head(swiss)
+```
+
+:::
+::: {.column width="50%" .fragment}
+### Plotting
+```{r}
+plot(swiss$Agriculture, swiss$Education)
+```
+
+:::
+::::
+
+
+## Custom callouts
+
+:::: {.columns}
+
+### Defaults
+
+::: {.column width="20%"}
+
+::: {.callout-tip}
+### Tip
+Good tips for students
+:::
+
+:::
+
+::: {.column width="20%"}
+
+::: {.callout-note}
+### Note
+Make a note of this!
+:::
+
+:::
+
+::: {.column width="20%"}
+::: {.callout-important}
+### Important default
+Lore ipsum
+:::
+
+
+:::
+
+::: {.column width="20%"}
+
+::: {.callout-caution}
+### Caution
+Be careful with this stick!
+:::
+
+:::
+
+::: {.column width="20%"}
+::: {.callout-warning}
+### Warning default
+Attention carriage return
+:::
+:::
 
 
 
+::::
 
 
+:::: {.columns}
+
+### Custom icon and dark background
+::: {.column width="20%"}
+::: {.callout-tip  icon=false}
+### {{< fa arrow-right >}} Tip
+Use `icon=false` in callout div 
+:::
+
+:::
+
+::: {.column width="20%"}
+::: {.callout-note icon=false}
+### Note
+Without icon
+:::
+
+:::
+
+
+::: {.column width="20%"}
+
+::: {.callout-important icon=false}
+### {{< fa circle-exclamation >}} Important
+With no icon, suggesting to use fontawesome icon
+:::
+
+
+:::
+
+::: {.column width="20%"}
+::: {.callout-caution icon=false}
+### {{< fa road-barrier >}} Caution
+Cats!
+
+:::
+
+:::
+
+::: {.column width="20%"}
+::: {.callout-warning icon=false}
+### {{< fa triangle-exclamation >}} Warning
+The end is near.
+:::
+
+:::
+
+::::
+
+## Callouts in two column layouts
+
+:::: {.columns}
+::: {.column width="50%"}
+### Data 
+
+```{r}
+head(swiss)
+```
+
+::: {.callout-note icon=false}
+### {{< fa notes-medical >}} Note
+Switzerland is mostly in the Alps.
+:::
+
+:::
+::: {.column width="50%"}
+### Elevation
+
+
+```{r}
+for (i in letters[1:3]){
+  print(i)
+}
+```
+
+::: {.callout-important}
+### Important
+Alps are mountains!
+:::
+
+:::
+::::
+
+# Code {.section}
+Some text on section slide
+
+## Python and R
+
+:::: {.columns}
+::: {.column width="50%"}
+### Python
+```{python}
+for i in range(0, 3):
+  print(i)
+
+```
+
+Python is using a different background for cases where R and Python code are displayed side by side.
+:::
+
+::: {.column width="50%"}
+
+### R
+```{r}
+print("We don't write for loops")
+```
+
+:::
+::::
+
+## Snippets
+
+## Customisations
+
+:::: {.columns}
+::: {.column width="50%"}
+It can be useful to adapt the style slightly if you're running multiple courses in parallel. 
+:::
+::: {.column width="50%"}
+
+:::
+::::
