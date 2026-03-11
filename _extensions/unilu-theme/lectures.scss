@@ -335,13 +335,13 @@ code.sourceCode > span {
 
 
 div.sourceCode {
-  background-color: #002A5A; //#00558b;
+  background-color: $uni-background; //#00558b;
   color: white; 
   font-family: monospace;
 }
 
 .reveal pre.sourceCode code {
-  background-color: #002A5A; //#00558b;
+  background-color: $uni-background !important; //#00558b;
   color: white;
 }
 
