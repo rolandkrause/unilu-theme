@@ -10,7 +10,7 @@ contributes:
   formats:
     revealjs:
       theme: [default, lectures.scss]
-      highlight-style: solarized
+      #highlight-style: solarized
       logo: uni-logo.png
       slide-number: c/t
       show-slide-number: all
