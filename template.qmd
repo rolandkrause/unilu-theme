@@ -18,7 +18,66 @@ execute:
   echo: true
 ---
 
+## Content
 
+:::: {.columns}
+::: {.column width="50%"}
+
+:::
+::: {.column width="50%"}
+
+:::
+::::
+
+# Standard layouts {.section}
+Typical layout situations
+
+## Standard two column layout
+
+:::: {.columns}
+::: {.column width="50%"}
+### Data
+```{r}
+options(width=60)
+head(swiss)
+```
+
+:::
+::: {.column width="50%" .fragment}
+### Plotting
+```{r}
+plot(swiss$Agriculture, swiss$Education)
+```
+
+:::
+::::
+
+## Standard two column layout
+
+:::: {.columns}
+::: {.column width="50%"}
+### Subheader
+
+Presentations are set to 1600 x 900 with small font sizes to maximize content display
+for application in data science teaching 
+
+:::
+::: {.column width="50%" .fragment}
+::: {.callout-important icon="false"}
+### Emphasize with callout boxes
+Use sparingly - this is the **important** box. 
+:::
+
+::: {.callout-note icon="false"}
+### Emphasize with callout boxes
+Default for callout should be **note** and **important** matching most closedly to primary uni colors - this is the **note** box. 
+:::
+
+:::
+::::
+
+# Quarto tips and tricks {.section
+}
 ## First slide
 
 ::: {.incremental}
@@ -177,26 +236,6 @@ plot(swiss$Agriculture, swiss$Education)
 ```
 
 
-## Standard two column layout
-
-:::: {.columns}
-::: {.column width="50%"}
-### Data
-```{r}
-options(width=60)
-head(swiss)
-```
-
-:::
-::: {.column width="50%" .fragment}
-### Plotting
-```{r}
-plot(swiss$Agriculture, swiss$Education)
-```
-
-:::
-::::
-
 
 ## Custom callouts
 
@@ -344,8 +383,18 @@ Some text on section slide
 ::: {.column width="50%"}
 ### Python
 ```{python}
-for i in range(0, 3):
-  print(i)
+from dataclasses import dataclass
+
+@dataclass
+class DataSign:
+  n = 3
+  
+  def f(self):
+    for i in range(0, 3):
+      if (i <= 10):
+        print(i)
+
+d = DataSign()
 
 ```
 
