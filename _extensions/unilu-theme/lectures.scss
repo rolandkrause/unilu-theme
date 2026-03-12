@@ -48,7 +48,7 @@ $presentation-heading-color: $uni-background !default;
 $presentation-title-slide-text-align: center !default;
 
 // code
-$code-color: #1E3446 !default;
+$code-color: $uni-primary !default;
 $font-family-monospace: "Fira Mono", "Liberation Mono", monospace  !default;
 //$presentation-font-size-root: 40px !default;
 
@@ -106,16 +106,6 @@ $font-family-monospace: "Fira Mono", "Liberation Mono", monospace  !default;
   
 }
 
-
-.reveal .section{
-  background-color: $uni-background;
-  color: white !important;
-}
-
-.reveal .section h1 h2 h3 h4 h5 h6 p{
-  background-color: $uni-background;
-  color: white !important;
-}
 
 .reveal .slide blockquote {
   border-left: 9px solid $link-color;
@@ -286,6 +276,16 @@ pre code:not(.sourceCode) {
 // Standard slides (modify level 2 header)
 
 
+.reveal .section{
+  background-color: $uni-background !important;
+
+}
+
+.reveal .section h1 h2 h3 h4 h5 h6 p{
+  //background-color: rgb($uni-background, 0.3) !important;
+  color: white !important;
+}
+
 .reveal .slide-practical {
  // background-color: lighten($fstm-grey, 10) !important;
    background-color: lighten($uni-background, 70) !important;
@@ -346,7 +346,7 @@ div.sourceCode {
 }
 
 code span.at {
-  color: #83bcff;
+  color: $fdef-blue;
 }
 
 code span.bu {
