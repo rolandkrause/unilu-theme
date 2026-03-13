@@ -25,9 +25,10 @@ execute:
 
 :::
 ::: {.column width="50%"}
-
+How to use this 
 :::
 ::::
+
 
 # Standard layouts {.section}
 Typical layout situations
@@ -382,7 +383,7 @@ Some text on section slide
 :::: {.columns}
 ::: {.column width="50%"}
 ### Python
-```{python}
+```{.python}
 from dataclasses import dataclass
 
 @dataclass
@@ -405,6 +406,8 @@ Python is using a different background for cases where R and Python code are dis
 
 ### R
 ```{r}
+mle_obj <- stats4::mle(function(x = 1) (x - 2) ^ 2)
+typeof(mle_obj)
 print("We don't write for loops")
 ```
 
