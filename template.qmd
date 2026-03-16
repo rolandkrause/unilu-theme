@@ -30,10 +30,10 @@ How to use this
 ::::
 
 
-# Standard layouts {.section}
+# Standard layouts {.chapter}
 Typical layout situations
 
-## Standard two column layout
+## Standard two column layout {.no-logo}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -77,8 +77,8 @@ Default for callout should be **note** and **important** matching most closedly 
 :::
 ::::
 
-# Quarto tips and tricks {.section
-}
+# Quarto tips and tricks {.chapter}
+
 ## First slide
 
 ::: {.incremental}
@@ -375,7 +375,7 @@ Alps are mountains!
 :::
 ::::
 
-# Code {.section}
+# Code {.chapter}
 Some text on section slide
 
 ## Python and R

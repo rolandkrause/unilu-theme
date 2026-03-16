@@ -273,22 +273,71 @@ pre code:not(.sourceCode) {
 
 // Standard slides (modify level 2 header)
 
-
-.reveal .section{
+.reveal .chapter {
   background-color: $uni-background !important;
+  
+}
+
+.reveal .slide-logo {
+  max-height: 30px !important;
+  width: auto;
+}
+
+.reveal:has(section.chapter.present) .slide-logo {
+  content: url('/_extensions/unilu-theme/uni-logo-white.png') !important;
+
+ // display: none;
+}
+
+/*
+.reveal .chapter .slide-logo {
+  max-height: 60px !important;
+  width: auto;
+}
+
+.reveal section.level1 .slide-logo {
+  display: none !important;
+} */
+
+/* Or show a different logo */
+.reveal .chapter.h1 .slide-logo {
+  content: url('/_extensions/unilu-theme/uni-logo-white.png') !important;
+}
+
+/*.reveal .slides section.overview {
+  background-image: none !important;
+}
+
+.reveal .slides section.chapter {
+  background-color: darken($fhse-orange, 20) !important;
   background-image: url('/_extensions/unilu-theme/uni-logo-white.png');
+  background-size: 150px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+/*
+.reveal .slides .overview {
+  background-color: $uni-background;
+  background-image: url('/_extensions/unilu-theme/uni-logo-white.png');
+  background-size: 150px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+ .reveal .section{
+  background-color: $uni-background !important;
+  background-image: url('/_extensions/unilu-theme/uni-logo-white.png') !important;
   background-size: 150px;
   background-position: bottom right;
   background-repeat: no-repeat;
 
 }
 
-.reveal .section h1 h2 h3 h4 h5 h6 p br{
-  background-color: $uni-background !important;
-    background-image: url('/_extensions/unilu-theme/uni-logo.png');
+.reveal .slides .overview h1 {
   background-image: none !important;
+  color: white;
 }
-
+*/
 
 .reveal .slide-practical {
  // background-color: lighten($fstm-grey, 10) !important;
