@@ -1,10 +1,10 @@
 ---
-title: "Data science with R"
+title: "Quarto template"
 subtitle: "Using the tidyverse and Quarto"
 date: today
-date-format: "dddd, [the] D[<sup style='font-size:65%;font-style:italic;'>th</sup>] [of] MMMM, YYYY"
-institute: UniLu
-author: "Aurélien Ginolhac"
+date-format: "dddd, D MMMM YYYY"
+institute: "Université du Luxembourg"
+author: "Aurélien Ginolhac, Roland Krause"
 logo_url: "https://github.com/ginolhac/unilu-theme"
 format:
   unilu-theme-revealjs:
@@ -14,6 +14,7 @@ title-slide-attributes:
   data-background-image: https://tidyverse.tidyverse.org/logo.png
   data-background-position: "50% 10%"
   data-background-size: "100px"
+  data-background-color: "#142F3F" # required for title background
 execute: 
   echo: true
 ---
@@ -22,10 +23,20 @@ execute:
 
 :::: {.columns}
 ::: {.column width="50%"}
+### Aims
+This presentation demonstrates typical use of the `unilu-theme` Quarto template for common use cases.
+
+Not all elements of the templates of the Powerpoint slide deck are implemented. 
+
+Notably, 
+- the two-tone section slides proved hard to get right.
+- the title slide is a lot more modest
 
 :::
 ::: {.column width="50%"}
-How to use this 
+### Remarks
+The main focus are data science related courses teaching R and Python.
+Font sizes are relatively small to place code and data on the same slide.
 :::
 ::::
 
@@ -33,11 +44,11 @@ How to use this
 # Standard layouts {.chapter}
 Typical layout situations
 
-## Standard two column layout {.no-logo}
+## Standard two column code {.no-logo}
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Data
+### Code
 ```{r}
 options(width=60)
 head(swiss)
@@ -45,7 +56,7 @@ head(swiss)
 
 :::
 ::: {.column width="50%" .fragment}
-### Plotting
+### Plotting/Result
 ```{r}
 plot(swiss$Agriculture, swiss$Education)
 ```
@@ -64,6 +75,7 @@ for application in data science teaching
 
 :::
 ::: {.column width="50%" .fragment}
+### Boxes
 ::: {.callout-important icon="false"}
 ### Emphasize with callout boxes
 Use sparingly - this is the **important** box. 
@@ -76,6 +88,58 @@ Default for callout should be **note** and **important** matching most closedly 
 
 :::
 ::::
+
+## Standard layout
+
+:::: {.columns}
+::: {.column width="50%"}
+### Header best as level3 (h3)
+Smaller headers (h4/h5/h6) are possible but h2 fill create new slide and break presention. 
+
+:::
+::: {.column width="50%" .highlight}
+### Emphasis
+A less intrusive way to highlight is the `.highlight` tag that will set this light red background.
+
+:::
+::::
+
+## Practical {.slide-practical}
+
+Using `{.slide-practical}` class in the header2
+
+Absolute positioning of image and text, increment with `. . .`
+
+::: {.absolute top="35%" left="15%"}
+![](https://rworkshop.uni.lu/img/rstudio_blank.png)
+:::
+
+. . .
+
+::: {.absolute bottom="10%" left="25%"}
+::: {style="color: #FF0000"}
+Console
+:::
+:::
+
+
+## Logo link
+
+:::: {.columns}
+::: {.column width="50%"}
+
+Following discussion on [quarto-cli](https://github.com/quarto-dev/quarto-cli/discussions/3082#discussioncomment-7058099), logo on each slide can point to the desired URL.
+
+Set it in the YAML header with `logo_url: "https://fasterthanli.me"`
+:::
+::: {.column width="50%" .highlight}
+
+If not set, it points to https://quarto.org
+:::
+::::
+
+
+
 
 # Quarto tips and tricks {.chapter}
 
@@ -102,31 +166,7 @@ Default for callout should be **note** and **important** matching most closedly 
 mean(c(1, 3, 6))
 ```
 
-## Click logo
 
-Following discussion on [quarto-cli](https://github.com/quarto-dev/quarto-cli/discussions/3082#discussioncomment-7058099), logo on each slide can point to the desired URL.
-
-Set it in the YAML header with `logo_url: "https://fasterthanli.me"`
-
-If not set, it points to https://quarto.org
-
-## Practical {.slide-practical}
-
-Using `{.slide-practical}` class to the header2
-
-Absolute positioning of image and text, increment with `. . .`
-
-::: {.absolute top="35%" left="15%"}
-![](https://rworkshop.uni.lu/img/rstudio_blank.png)
-:::
-
-. . .
-
-::: {.absolute bottom="10%" left="25%"}
-::: {style="color: #FF0000"}
-Console
-:::
-:::
 
 ## Columns as fenced divs `{.columns}` and LaTex {.smaller}
 
@@ -210,7 +250,7 @@ More in the official [Quarto Presentation demo](https://quarto.org/docs/presenta
 ## Blockquote
 
 ::: {.huge}
->**Literate programming** is the practice of [mixing]{.green} code and descriptive writing in order to execute and explain a [data analysis]{.green} **simultaneously in the same document**.
+>**Literate programming** is the practice of [mixing]{.red} code and descriptive writing in order to execute and explain a [data analysis]{.red} **simultaneously in the same document**.
 
 
 — _William Landau_
@@ -238,7 +278,7 @@ plot(swiss$Agriculture, swiss$Education)
 
 
 
-## Custom callouts
+## Custom callout boxes
 
 :::: {.columns}
 
@@ -248,7 +288,7 @@ plot(swiss$Agriculture, swiss$Education)
 
 ::: {.callout-tip}
 ### Tip
-Good tips for students
+Defaults callout boxes use the default icon quarto that comes with Quarto.
 :::
 
 :::
@@ -257,7 +297,7 @@ Good tips for students
 
 ::: {.callout-note}
 ### Note
-Make a note of this!
+Callout boxes are not aligned. 
 :::
 
 :::
@@ -265,7 +305,7 @@ Make a note of this!
 ::: {.column width="20%"}
 ::: {.callout-important}
 ### Important default
-Lore ipsum
+It is usually not helpful to use more than one per slide
 :::
 
 
@@ -275,7 +315,7 @@ Lore ipsum
 
 ::: {.callout-caution}
 ### Caution
-Be careful with this stick!
+Use level 3 (h3, `###`) to set the title of the callout box. 
 :::
 
 :::
@@ -283,7 +323,7 @@ Be careful with this stick!
 ::: {.column width="20%"}
 ::: {.callout-warning}
 ### Warning default
-Attention carriage return
+Level 2 header create a deathloop with the presentation returning to the start.
 :::
 :::
 
@@ -298,7 +338,7 @@ Attention carriage return
 ::: {.column width="20%"}
 ::: {.callout-tip  icon=false}
 ### {{< fa arrow-right >}} Tip
-Use `icon=false` in callout div 
+Use `icon=false` in callout div allows to set your own icon before the title. 
 :::
 
 :::
@@ -306,7 +346,7 @@ Use `icon=false` in callout div
 ::: {.column width="20%"}
 ::: {.callout-note icon=false}
 ### Note
-Without icon
+Works also without the icon. The icon-less variant uses darker background and white text and icon.
 :::
 
 :::
@@ -416,6 +456,9 @@ print("We don't write for loops")
 
 ## Snippets
 
+Creating and editing slides can be much enhanced by using code snippets
+ for column (standard layout).
+
 ## Customisations
 
 :::: {.columns}
@@ -424,5 +467,18 @@ It can be useful to adapt the style slightly if you're running multiple courses 
 :::
 ::: {.column width="50%"}
 
+:::
+::::
+
+## Before we stop
+
+:::: {.columns}
+::: {.column width="50%"}
+### Conclusion
+More research is needed.
+:::
+
+::: {.column width="50%" .thanks}
+Thank you for your attention!
 :::
 ::::

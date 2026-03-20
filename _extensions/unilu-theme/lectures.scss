@@ -1,7 +1,7 @@
 /*-- scss:defaults --*/
 
 // fonts
-@import url(https://fonts.googleapis.com/css?family=Barlow&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Barlow:wght@200..900&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Lora&display=swap);
 
 $font-family-sans-serif: "Barlow", "Book Antiqua", Palatino,
@@ -14,6 +14,16 @@ $font-family-serif: "Lora", "Book Antiqua", Palatino,
 $uni-primary: #1E3446;
 $uni-background: #142F3F;
 $uni-red: rgb(225, 60, 46); // #E13C2E; "red orange"
+
+$uni-red07: #D6502D;
+$uni-red05: #EBB7A7;
+$uni-red03: #F2CFC3;
+$uni-red02: #F8E7E2;
+
+
+
+
+
 
 $fstm-grey: #A0C6D3;
 $fhse-orange: #FAC59E;
@@ -41,7 +51,7 @@ $imp-color: $uni-red;
 
 
 // headings
-$presentation-heading-font: $font-family-serif  !default;
+$presentation-heading-font: $font-family-sans-serif  !default;
 $presentation-heading-color: $uni-background !default;
 $presentation-title-slide-text-align: center !default;
 
@@ -55,22 +65,31 @@ $font-family-monospace: "Fira Mono", "Liberation Mono", monospace  !default;
 
 /* Title page custom */
 /* adapted from https://github.com/mcanouil/quarto-revealjs-storybook  */
+
+
+#title-slide {
+  background-color: $uni-background;
+  color: white;
+}
+
 #title-slide .title, #title-slide .subtitle {
   opacity: 0.80;
   margin-top: 0px;
   margin-bottom: 0px;
+  color: $uni-red;
+  font-weight: 700;
 }
 
 #title-slide .title {
-  font: $font-family-serif;
-  color: $uni-background;
-  font-weight: bold;
+  font: $font-family-sans-serif;
+  color: $uni-red;
+  font-weight: 900;
   margin-top: -20px;
   margin-bottom: 5px;
 }
 
 #title-slide .subtitle {
-  color: $presentation-heading-color;
+  color: white;
   font-weight: bold;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -79,6 +98,7 @@ $font-family-monospace: "Fira Mono", "Liberation Mono", monospace  !default;
 
 #title-slide .institute, #title-slide .author, #title-slide .date {
   opacity: 0.50;
+  color: white;
   margin-top: 0px;
   margin-bottom: 0px;
   font-weight: 400;
@@ -126,6 +146,9 @@ $font-family-monospace: "Fira Mono", "Liberation Mono", monospace  !default;
   text-decoration-color: $link-color;
 }
 
+.reveal .highlight{
+  background-color: $uni-red02;
+}
 
 .red {
   color: $uni-red;
@@ -179,16 +202,18 @@ pre code:not(.sourceCode) {
   padding-right: 15px;
 	color:#fff;
 	font-size: 56px;
-	display: inline;
+//	display: inline;
 	border-radius: 15px;
-	background-color: #AFDEF6;
+	background-color: $link-color;
 }
 
 // Callouts
 
-/* .callout.callout-style-default .callout-body {
+
+
+.callout.callout-style-default .callout-body {
   background-color: white;
-} */
+}
 
 .no-icon .callout-title strong{
   color: white;
@@ -197,15 +222,16 @@ pre code:not(.sourceCode) {
 
 // Tip
 .callout-tip.callout-style-default {
-   background-color: lighten($tip-color, 25%) !important;
-   border-color: darken($tip-color, 40%) !important;
+
+   border-color: lighten($uni-primary, 10%) !important;
+   
 }
 .callout-tip.callout-style-default .callout-title {
-   background-color: rgb($tip-color, 0.3) !important;
+   background-color: lighten($uni-primary, 70%) !important;
 }
 
 .callout-tip.no-icon .callout-title {
-   background-color: darken($tip-color, 30) !important;
+   background-color: lighten($uni-primary, 30) !important;
    color: white !important;
 }
 
@@ -226,74 +252,145 @@ pre code:not(.sourceCode) {
 
 // Important
 
+.callout-important.callout-style-default .callout-body{
+   border-color: $uni-red02 !important;
+}
 
 .callout-important.callout-style-default {
-   border-color: darken($imp-color, 10) !important;
-   background-color: rgba($uni-red, 0.1);
+   border-color: darken($uni-red, 10) !important;
    border-left-width: 5px !important;
+   ssbackground-color: $uni-red02 !important;
 }
 
 .callout-important.callout-style-default .callout-title {
    background-color: rgba($uni-red, 0.3) !important;
-   //background-color: white !important;
-   color: white !important;
+   color: lighten($uni-red, 30) !important;
 }
 
 .callout-important.no-icon .callout-title {
    background-color: $uni-red !important;
-   color: white !important;
+   color: lighten($uni-red, 30) !important;
 }
 
 
-// caution orange
+// caution 
 
 .callout-caution.callout-style-default {
-   border-color: darken($fhse-orange, 35) !important;
+   border-color: $uni-red07 !important;
    border-left-width: 5px !important;
 }
 
 .callout-caution.callout-style-default .callout-title {
-   background-color: $fhse-orange !important;
+   background-color: $uni-red05 !important;
 }
 
 .callout-caution.no-icon .callout-title {
-   background-color: darken($fhse-orange, 30) !important;
+   background-color: $uni-red07 !important;
 }
 
-// warning yellow
+// warning
 
-.callout-caution.callout-style-default {
-   border-color: darken($fhse-orange, 25) !important;
-   border-left-width: 5px !important;
+.callout-warning.callout-style-default {
+  border-color: $uni-red05 !important;
+  border-left-width: 5px !important;
+  background-color: lighten($uni-red, 70) !important;
+}
+
+.callout-warning.callout-style-default .callout-title {
+   background-color: $uni-red02 !important;
 }
 
 .callout-warning.no-icon .callout-title {
-   background-color: darken($fhse-orange, 20) !important;
+   background-color: $uni-red05 !important;
 }
 
 // Standard slides (modify level 2 header)
 
 .reveal .chapter {
   background-color: $uni-background !important;
-  
+  color: $uni-red !important;
+  z-index: -900;
+}
+
+.reveal .chapter h1, 
+.reveal .chapter p,
+.reveal .chapter h2,
+.reveal .chapter h3,
+.reveal .chapter h4,
+.reveal .chapter h5,
+.reveal .chapter h6{
+    margin-left:200px !important;
+    font-weight: 800;
+
+}
+
+
+
+/* Top rectangle for background - no practical consequence, for development */
+.reveal .slides section.chapter::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 1600px;
+  height: 450px;
+  background-color: $uni-background;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Circle for chapter slide */
+.reveal .slides section.chapter::after {
+  content: '';
+  position: fixed;
+  top: 200px;
+  left: -330px;
+  height: 500px;
+  width: 500px;
+
+  border-radius: 50%;
+  background-color: $uni-red;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* Circle for slide title */
+.reveal .slides h2::before {
+  content: '';
+  position: fixed;
+  top: 20px;
+  left: -115px;
+  height: 50px;
+  width: 50px;
+
+  border-radius: 50%;
+  background-color: $uni-red;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.slide-number, .reveal.has-logo .slide-number {
+  color: $uni-red;
+  position: absolute !important;
+  bottom: 12px !important;
+  right: 10px;
+  top: unset !important;
 }
 
 .reveal .slide-logo {
-  max-height: 30px !important;
+  max-height: 60px !important;
   width: auto;
+  position: absolute !important;
+  top: 0px;
+  right: 10px;
 }
 
 .reveal:has(section.chapter.present) .slide-logo {
   content: url('/_extensions/unilu-theme/uni-logo-white.png') !important;
-
- // display: none;
 }
 
 /*
-.reveal .chapter .slide-logo {
-  max-height: 60px !important;
-  width: auto;
-}
 
 .reveal section.level1 .slide-logo {
   display: none !important;
@@ -340,8 +437,7 @@ pre code:not(.sourceCode) {
 */
 
 .reveal .slide-practical {
- // background-color: lighten($fstm-grey, 10) !important;
-   background-color: lighten($uni-background, 70) !important;
+   background-color: $uni-red02 !important;
 }
 
 // syntax hightlighting
@@ -353,7 +449,6 @@ pre {
 
 .reveal pre.sourceCode.python code{
   background-color:  darken($uni-red, 35) !important;
-  color: greenyellow;
 }
 
 .cell-output pre code{
