@@ -19,7 +19,7 @@ quarto use template ginolhac/unilu-theme
 quarto install extension ginolhac/unilu-theme
 ```
 
-## Logo clickable
+## Linked logo
 
 Following discussion on [quarto-cli](https://github.com/quarto-dev/quarto-cli/discussions/3082#discussioncomment-7058099), logo on each slide can point to the desired URL.
 
