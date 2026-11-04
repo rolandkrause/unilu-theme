@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Documented code output width in the README: characters that fit per column width, which R options to set, and how to change them for one slide.
+- Added `tools/check_slides.js`, which lists slides that run past the bottom and code output that wraps or runs past its column.
+
 ## Version 2.1.0
 
 - Added a `.grid-row` utility class: each child of the div is one grid cell, for comparison tables (e.g. task | base R | tidyverse | comment) without nested `.column` divs. Column widths are set with the `--grid-cols` custom property, defaulting to equal-width columns.
