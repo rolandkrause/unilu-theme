@@ -13,3 +13,5 @@
 _extensions/quarto-ext/fontawesome/*
 /.quarto/
 **/*.quarto_ipynb
+tools/node_modules/
+tools/package-lock.json

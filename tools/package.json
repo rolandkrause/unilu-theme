@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "description": "Checks for rendered unilu-theme decks",
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}
